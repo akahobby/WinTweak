@@ -1,0 +1,18 @@
+# Logs and user data (generated at runtime)
+Logs/
+Win11Reclaim.log
+LastUsedSettings.json
+CustomAppsList
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Temp / IDE
+*.tmp
+*.temp
+.vs/
+.idea/
+
+# PowerShell
+*.ps1~
