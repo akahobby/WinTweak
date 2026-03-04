@@ -1,6 +1,6 @@
 <Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Win11Reclaim" 
+        Title="WinTweak" 
         MinWidth="1080" MinHeight="600"
         MaxWidth="1400"
         ResizeMode="CanResize" 
@@ -687,13 +687,13 @@
                             <ColumnDefinition Width="Auto"/>
                         </Grid.ColumnDefinitions>
                         <TextBlock Grid.Column="0" 
-                                   Text="Win11Reclaim" 
+                                   Text="WinTweak" 
                                    Foreground="{DynamicResource FgColor}"
                                    VerticalAlignment="Center" 
                                    Margin="12,0,0,0"
                                    FontSize="12"/>
                         <StackPanel Grid.Column="1" Orientation="Horizontal">
-                            <Button x:Name="KofiBtn" Content="&#xEB52;" FontFamily="Segoe Fluent Icons" FontSize="15" Style="{StaticResource TitlebarButton}" ToolTip="Support the creator" AutomationProperties.Name="Support the creator" Visibility="Collapsed"/>
+                            <Button x:Name="KofiBtn" Content="&#xEB51;" FontFamily="Segoe Fluent Icons" FontSize="15" Style="{StaticResource TitlebarButton}" ToolTip="Support on Ko-fi" AutomationProperties.Name="Support on Ko-fi"/>
                             <Button x:Name="MenuBtn" Content="&#xE700;" FontFamily="Segoe Fluent Icons" FontSize="15" Style="{StaticResource TitlebarButton}" ToolTip="Options" AutomationProperties.Name="Options">
                                 <Button.ContextMenu>
                                     <ContextMenu x:Name="MainMenu">
@@ -813,7 +813,7 @@
                                         <Ellipse Margin="18"
                                                  Stroke="{DynamicResource AccentColor}"
                                                  StrokeThickness="3"/>
-                                        <TextBlock Text="WR"
+                                        <TextBlock Text="WT"
                                                    Foreground="White"
                                                    FontWeight="Bold"
                                                    FontSize="72"
@@ -824,7 +824,7 @@
 
                                 <!-- Text + actions -->
                                 <StackPanel Grid.Column="1" VerticalAlignment="Center">
-                                    <TextBlock Text="Welcome to Win11Reclaim"
+                                    <TextBlock Text="Welcome to WinTweak"
                                                FontSize="26"
                                                FontWeight="Bold"
                                                Foreground="{DynamicResource FgColor}"
@@ -862,14 +862,14 @@
                 <TabItem Header="Apps">
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="220"/>
+                            <ColumnDefinition Width="240"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
 
                         <!-- Left: filters and search -->
                         <Border Grid.Column="0" Background="{DynamicResource CardBgColor}" BorderBrush="{DynamicResource BorderColor}" BorderThickness="0,0,1,0" Padding="20,24,20,20" MinWidth="200">
                             <StackPanel>
-                                <TextBlock Text="App &amp; bloatware removal" FontWeight="Bold" FontSize="16" Foreground="{DynamicResource FgColor}" Margin="0,0,0,8"/>
+                                <TextBlock Text="App &amp; bloatware removal" FontWeight="Bold" FontSize="16" Foreground="{DynamicResource FgColor}" Margin="0,0,0,8" TextWrapping="Wrap"/>
                                 <TextBlock Text="Choose what to remove. Use the list or search below." FontSize="12" Foreground="{DynamicResource FgColor}" TextWrapping="Wrap" Margin="0,0,0,20"/>
 
                                 <Button x:Name="DefaultAppsBtn" Content="Use recommended list" ToolTip="Select the recommended set of apps to remove" Style="{StaticResource SecondaryButtonStyle}" Height="34" Padding="10,0" Margin="0,0,0,8" AutomationProperties.Name="Use recommended app list"/>
@@ -1130,7 +1130,7 @@
                         <Border Grid.Row="0" Padding="24,16,24,0">
                             <StackPanel>
                                 <TextBlock Text="Applying changes" FontWeight="Bold" FontSize="20" Margin="0,0,0,6" Foreground="{DynamicResource FgColor}"/>
-                                <TextBlock Text="Win11Reclaim is now applying your selected changes. You can watch the detailed log below." FontSize="13" Margin="0,0,0,20" Foreground="{DynamicResource FgColor}" TextWrapping="Wrap"/>
+                                <TextBlock Text="WinTweak is now applying your selected changes. You can watch the detailed log below." FontSize="13" Margin="0,0,0,20" Foreground="{DynamicResource FgColor}" TextWrapping="Wrap"/>
                             </StackPanel>
                         </Border>
 

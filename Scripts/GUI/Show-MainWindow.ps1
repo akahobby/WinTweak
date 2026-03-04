@@ -38,7 +38,7 @@ function Show-NimbusMainWindow {
     })
     
     $kofiBtn.Add_Click({
-        Start-Process "https://ko-fi.com/raphire"
+        Start-Process "https://ko-fi.com/akahobby"
     })
     
     $menuBtn.Add_Click({
@@ -1408,14 +1408,14 @@ function Show-NimbusMainWindow {
                 
                 $finishBtn.Dispatcher.Invoke([action]{
                     $finishBtn.IsEnabled = $true
-                    $finishBtnText.Text = "Close Win11Reclaim"
+                    $finishBtnText.Text = "Close WinTweak"
                 })
             }
             catch {
                 Write-ToConsole "Error: $($_.Exception.Message)"
                 $finishBtn.Dispatcher.Invoke([action]{
                     $finishBtn.IsEnabled = $true
-                    $finishBtnText.Text = "Close Win11Reclaim"
+                    $finishBtnText.Text = "Close WinTweak"
                 })
             }
         })

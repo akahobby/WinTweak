@@ -1,4 +1,10 @@
-# Win11Reclaim
+# WinTweak
+
+![WinTweak](Assets/branding/WinTweak.png)
+
+**WinTweak** is a single-file portable EXE that launches the existing Win11Reclaim PowerShell WPF GUI with **1:1 behavior**—no UI redesign and no feature changes. The EXE is only a packager/launcher: it bundles the scripts and runs them via Windows PowerShell 5.1.
+
+---
 
 A PowerShell toolkit for trimming down and reclaiming control over Windows 11. Remove bloatware, reduce telemetry and suggested content, and apply a curated set of privacy, UI, and performance tweaks—all through a simple GUI or optional CLI.
 
@@ -13,7 +19,22 @@ A PowerShell toolkit for trimming down and reclaiming control over Windows 11. R
 > **Warning**  
 > This tool modifies system and app settings. Create a restore point before use and proceed at your own risk.
 
-### Run with Get.ps1 (recommended)
+### Run with WinTweak.exe (portable launcher)
+
+Build a single portable executable that runs the same GUI as the scripts:
+
+1. From the repo root, publish the launcher (requires [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0)):
+
+   ```powershell
+   dotnet publish src/WinTweak.Launcher -c Release -r win-x64 -p:PublishSingleFile=true -p:SelfContained=true -p:IncludeNativeLibrariesForSelfExtract=true
+   ```
+
+2. The output is produced at:
+   - **`src/WinTweak.Launcher/bin/Release/net8.0-windows/win-x64/publish/WinTweak.exe`**
+
+3. Run **WinTweak.exe** (it will request Administrator). It extracts the bundled scripts to `%LOCALAPPDATA%\WinTweak\bundle\<version>\` and launches the Win11Reclaim GUI. Logs are written to `%LOCALAPPDATA%\WinTweak\launcher.log`.
+
+### Run with Get.ps1 (recommended for script-only)
 
 **Get.ps1** downloads the latest Win11Reclaim from this repo and runs it. No need to clone or unzip the whole project.
 
@@ -62,6 +83,7 @@ Advanced options: apply tweaks to another user profile or to the default user te
 
 | Path | Purpose |
 |------|---------|
+| **`src/WinTweak.Launcher/`** | .NET 8 launcher project; builds **WinTweak.exe** (single-file portable launcher for the GUI) |
 | `Get.ps1` | One-file runner: downloads latest Win11Reclaim and runs it (use from [Releases](https://github.com/akahobby/Win11Reclaim/releases)) |
 | `Run.bat` | Launches the script with execution policy bypass (when run from a full download) |
 | `Win11Debloat.ps1` | Main entry point and GUI logic |

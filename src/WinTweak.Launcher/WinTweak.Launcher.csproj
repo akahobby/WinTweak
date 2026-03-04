@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>false</UseWPF>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ApplicationIcon>..\..\Assets\branding\WinTweak.ico</ApplicationIcon>
+    <AssemblyName>WinTweak</AssemblyName>
+    <RootNamespace>WinTweak.Launcher</RootNamespace>
+    <Version>1.0.0</Version>
+    <AssemblyVersion>1.0.0</AssemblyVersion>
+    <FileVersion>1.0.0</FileVersion>
+    <Product>WinTweak</Product>
+    <Company>akahobby</Company>
+    <Authors>akahobby</Authors>
+    <Description>Portable launcher for the Win11Reclaim PowerShell GUI (WinTweak).</Description>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+
+  <!-- Bundle zip is produced by CreateBundleZip target; embed it -->
+  <ItemGroup>
+    <EmbeddedResource Include="bundle.zip" Condition="Exists('bundle.zip')">
+      <LogicalName>WinTweak.Launcher.bundle.zip</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <Target Name="CreateBundleZip" BeforeTargets="BeforeBuild">
+    <PropertyGroup>
+      <_RepoRoot>$(MSBuildProjectDirectory)\..\..</_RepoRoot>
+      <_ScriptPath>$(MSBuildProjectDirectory)\CreateBundle.ps1</_ScriptPath>
+    </PropertyGroup>
+    <Exec WorkingDirectory="$(_RepoRoot)" Command="powershell -NoProfile -ExecutionPolicy Bypass -File &quot;$(_ScriptPath)&quot; -ProjectDir &quot;$(MSBuildProjectDirectory)&quot;" />
+  </Target>
+
+</Project>

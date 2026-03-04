@@ -13,6 +13,22 @@ Desktop.ini
 *.temp
 .vs/
 .idea/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# .NET / WinTweak.Launcher
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+*.rsuser
+*.pubxml
+project.lock.json
+project.fragment.lock.json
+artifacts/
+src/WinTweak.Launcher/bundle.zip
 
 # PowerShell
 *.ps1~

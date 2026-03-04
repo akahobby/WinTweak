@@ -5,7 +5,7 @@ function Show-MessageBox {
         [string]$Message,
         
         [Parameter(Mandatory=$false)]
-        [string]$Title = "Win11Reclaim",
+        [string]$Title = "WinTweak",
         
         [Parameter(Mandatory=$false)]
         [ValidateSet('OK', 'OKCancel', 'YesNo')]

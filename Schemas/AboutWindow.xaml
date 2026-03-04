@@ -1,6 +1,6 @@
 <Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="About Win11Reclaim" 
+        Title="About WinTweak" 
         Width="500"
         SizeToContent="Height"
         ResizeMode="NoResize"
@@ -117,7 +117,7 @@
 
             <!-- Title Bar -->
             <Grid Grid.Row="0" x:Name="TitleBar" Height="52" Background="Transparent">
-                <TextBlock Text="About Win11Reclaim" 
+                <TextBlock Text="About WinTweak" 
                            Foreground="{DynamicResource FgColor}"
                            FontSize="18"
                            FontWeight="SemiBold"
@@ -196,7 +196,7 @@
                 <!-- Content -->
                 <StackPanel Grid.Row="2" Margin="28,24">
                     <!-- Project Message -->
-                    <TextBlock Text="Win11Reclaim is a personal project focused on helping you quickly reclaim and streamline a Windows 11 installation."
+                    <TextBlock Text="WinTweak is a personal project focused on helping you quickly reclaim and streamline a Windows 11 installation."
                             FontSize="14"
                             Foreground="{DynamicResource FgColor}"
                             TextWrapping="Wrap"

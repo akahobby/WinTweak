@@ -1,6 +1,6 @@
 <Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Win11Reclaim Message" 
+        Title="WinTweak Message" 
         Width="440"
         SizeToContent="Height"
         ResizeMode="NoResize"
@@ -108,7 +108,7 @@
             <!-- Title Bar -->
             <Grid Grid.Row="0" x:Name="TitleBar" Height="44" Background="Transparent">
                 <TextBlock x:Name="TitleText" 
-                           Text="Win11Reclaim message" 
+                           Text="WinTweak message" 
                            Foreground="{DynamicResource FgColor}"
                            FontSize="16"
                            FontWeight="SemiBold"
