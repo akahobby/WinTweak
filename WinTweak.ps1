@@ -102,7 +102,7 @@ $script:DefaultSettingsFilePath = "$PSScriptRoot/DefaultSettings.json"
 $script:AppsListFilePath = "$PSScriptRoot/Apps.json"
 $script:SavedSettingsFilePath = "$PSScriptRoot/LastUsedSettings.json"
 $script:CustomAppsListFilePath = "$PSScriptRoot/CustomAppsList"
-$script:DefaultLogPath = "$PSScriptRoot/Logs/Win11Reclaim.log"
+$script:DefaultLogPath = "$PSScriptRoot/Logs/WinTweak.log"
 $script:RegfilesPath = "$PSScriptRoot/Regfiles"
 $script:AssetsPath = "$PSScriptRoot/Assets"
 $script:AppSelectionSchema = "$PSScriptRoot/Schemas/AppSelectionWindow.xaml"
@@ -121,7 +121,7 @@ $script:CancelRequested = $false
 
 # Check if current powershell environment is limited by security policies
 if ($ExecutionContext.SessionState.LanguageMode -ne "FullLanguage") {
-    Write-Error "Win11Reclaim is unable to run on your system, PowerShell execution is restricted by security policies"
+    Write-Error "WinTweak is unable to run on your system, PowerShell execution is restricted by security policies"
     Write-Output "Press any key to exit..."
     $null = [System.Console]::ReadKey()
     Exit
@@ -146,13 +146,13 @@ Write-Host "                   " -NoNewline; Write-Host "  |  " -ForegroundColor
 Write-Host "                   " -NoNewline; Write-Host "   (" -ForegroundColor Yellow -NoNewline; Write-Host "'''" -ForegroundColor Red -NoNewline; Write-Host ") " -ForegroundColor Yellow -NoNewline; Write-Host "   *  *" -ForegroundColor DarkYellow
 Write-Host "                   " -NoNewline; Write-Host "   ( " -ForegroundColor DarkYellow -NoNewline; Write-Host "'" -ForegroundColor Red -NoNewline; Write-Host " )   " -ForegroundColor DarkYellow -NoNewline; Write-Host "*" -ForegroundColor Yellow
 Write-Host ""
-Write-Host "             Win11Reclaim is launching..." -ForegroundColor White
+Write-Host "             WinTweak is launching..." -ForegroundColor White
 Write-Host "               Leave this window open" -ForegroundColor DarkGray
 Write-Host ""
 
-# Log script output to a Win11Reclaim log file at the specified path
+# Log script output to a WinTweak log file at the specified path
 if ($LogPath -and (Test-Path $LogPath)) {
-    Start-Transcript -Path "$LogPath/Win11Reclaim.log" -Append -IncludeInvocationHeader -Force | Out-Null
+    Start-Transcript -Path "$LogPath/WinTweak.log" -Append -IncludeInvocationHeader -Force | Out-Null
 }
 else {
     Start-Transcript -Path $script:DefaultLogPath -Append -IncludeInvocationHeader -Force | Out-Null
@@ -160,7 +160,7 @@ else {
 
 # Check if script has all required files
 if (-not ((Test-Path $script:DefaultSettingsFilePath) -and (Test-Path $script:AppsListFilePath) -and (Test-Path $script:RegfilesPath) -and (Test-Path $script:AssetsPath) -and (Test-Path $script:AppSelectionSchema) -and (Test-Path $script:FeaturesFilePath))) {
-    Write-Error "Win11Reclaim is unable to find required files, please ensure all script files are present"
+    Write-Error "WinTweak is unable to find required files, please ensure all script files are present"
     Write-Output ""
     Write-Output "Press any key to exit..."
     $null = [System.Console]::ReadKey()
@@ -199,7 +199,7 @@ catch {
 
 # Show WinGet warning that requires user confirmation, Suppress confirmation if Silent parameter was passed
 if (-not $script:WingetInstalled -and -not $Silent) {
-    Write-Warning "WinGet is not installed or outdated; this may prevent Win11Reclaim from removing certain apps"
+    Write-Warning "WinGet is not installed or outdated; this may prevent WinTweak from removing certain apps"
     Write-Output ""
     Write-Output "Press any key to continue anyway..."
     $null = [System.Console]::ReadKey()
@@ -996,7 +996,7 @@ function CreateSystemRestorePoint {
 
             if ($recentRestorePoints.Count -eq 0) {
                 try {
-                    Checkpoint-Computer -Description "Restore point created by Win11Reclaim" -RestorePointType "MODIFY_SETTINGS"
+                    Checkpoint-Computer -Description "Restore point created by WinTweak" -RestorePointType "MODIFY_SETTINGS"
                     return @{ Success = $true; Message = "System restore point created successfully" }
                 }
                 catch {
@@ -1148,7 +1148,7 @@ foreach ($Param in $script:ControlParams) {
     }
 }
 
-# Hide progress bars for app removal, as they block Win11Reclaim's output
+# Hide progress bars for app removal, as they block WinTweak's output
 if (-not ($script:Params.ContainsKey("Verbose"))) {
     $ProgressPreference = 'SilentlyContinue'
 }
@@ -1166,7 +1166,7 @@ if ($script:Params.ContainsKey("Sysprep")) {
 
     # Exit script if run in Sysprep mode on Windows 10
     if ($WinVersion -lt 22000) {
-        Write-Error "Win11Reclaim Sysprep mode is not supported on Windows 10"
+        Write-Error "WinTweak Sysprep mode is not supported on Windows 10"
         AwaitKeyToExit
     }
 }

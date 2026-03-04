@@ -181,7 +181,7 @@
                             Margin="0,0,16,0"/>
                     <TextBlock x:Name="ProjectLink"
                             Grid.Row="2" Grid.Column="1"
-                            Text="https://github.com/akahobby/Win11Reclaim" 
+                            Text="https://github.com/akahobby/WinTweak" 
                             FontSize="14"
                             Style="{StaticResource HyperlinkStyle}"
                             Margin="0,0,0,0"/>

@@ -30,7 +30,7 @@ static class Program
                 return 1;
             }
 
-            string scriptPath = Path.Combine(bundleDir, "Win11Debloat.ps1");
+            string scriptPath = Path.Combine(bundleDir, "WinTweak.ps1");
             if (!File.Exists(scriptPath))
             {
                 Log(logPath, $"Script not found: {scriptPath}");
@@ -113,7 +113,7 @@ static class Program
                         return ExtractBundle(bundleDir, versionFile, logPath);
                 }
                 if (File.ReadAllText(versionFile).Trim() == AppVersion &&
-                    File.Exists(Path.Combine(bundleDir, "Win11Debloat.ps1")))
+                    File.Exists(Path.Combine(bundleDir, "WinTweak.ps1")))
                     return true;
             }
             catch { /* re-extract on any doubt */ }

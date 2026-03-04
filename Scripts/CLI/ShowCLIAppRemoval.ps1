@@ -2,7 +2,7 @@
 function Show-NimbusCliAppRemoval {
     PrintHeader "App Removal"
 
-    Write-Output "> Opening Win11Reclaim app selection form..."
+    Write-Output "> Opening WinTweak app selection form..."
 
     $result = Show-NimbusAppSelection
 

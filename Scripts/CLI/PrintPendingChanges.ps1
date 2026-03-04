@@ -1,6 +1,6 @@
 # Prints all pending changes that will be made by the script
 function PrintPendingChanges {
-    Write-Output "Win11Reclaim will make the following changes:"
+    Write-Output "WinTweak will make the following changes:"
 
     if ($script:Params['CreateRestorePoint']) {
         Write-Output "- $($script:Features['CreateRestorePoint'].Label)"

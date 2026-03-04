@@ -4,7 +4,7 @@ function PrintHeader {
         $title
     )
 
-    $fullTitle = " Win11Reclaim Script - $title"
+    $fullTitle = " WinTweak Script - $title"
 
     if ($script:Params.ContainsKey("Sysprep")) {
         $fullTitle = "$fullTitle (Sysprep mode)"

@@ -2,7 +2,7 @@
 param([string]$ProjectDir)
 $ErrorActionPreference = 'Stop'
 $dest = Join-Path $ProjectDir 'bundle.zip'
-$items = @('Scripts','Assets','Regfiles','Schemas','Apps.json','DefaultSettings.json','Win11Debloat.ps1')
+$items = @('Scripts','Assets','Regfiles','Schemas','Apps.json','DefaultSettings.json','WinTweak.ps1')
 foreach ($item in $items) {
     if (-not (Test-Path $item)) { throw "Missing: $item" }
 }

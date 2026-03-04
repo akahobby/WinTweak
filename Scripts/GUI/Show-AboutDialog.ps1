@@ -62,13 +62,13 @@ function Show-NimbusAboutDialog {
     # Project / GitHub link click handlers
     if ($projectLink) {
         $projectLink.Add_MouseLeftButtonDown({
-            Start-Process "https://github.com/akahobby/Win11Reclaim"
+            Start-Process "https://github.com/akahobby/WinTweak"
         })
     }
     
     if ($kofiLink) {
         $kofiLink.Add_MouseLeftButtonDown({
-            Start-Process "https://github.com/akahobby/Win11Reclaim"
+            Start-Process "https://github.com/akahobby/WinTweak"
         })
     }
     

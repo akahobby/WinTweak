@@ -5,7 +5,7 @@ function Show-NimbusMainWindow {
     $WinVersion = Get-ItemPropertyValue 'HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion' CurrentBuild
 
     $usesDarkMode = GetSystemUsesDarkMode
-    # Always use dark glassmorphism theme for Win11Reclaim
+    # Always use dark glassmorphism theme for WinTweak
     $usesDarkMode = $true
 
     # Load XAML from file
@@ -56,7 +56,7 @@ function Show-NimbusMainWindow {
     
     if ($menuReportBug) {
         $menuReportBug.Add_Click({
-            Start-Process "https://github.com/akahobby/Win11Reclaim/issues"
+            Start-Process "https://github.com/akahobby/WinTweak/issues"
         })
     }
 
@@ -1557,7 +1557,7 @@ function Show-NimbusMainWindow {
         }
     })
     
-    # Finish (Close Win11Reclaim) button handler
+    # Finish (Close WinTweak) button handler
     $finishBtn.Add_Click({
         $window.Close()
     })

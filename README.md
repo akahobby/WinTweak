@@ -37,7 +37,7 @@ If you cloned the repo and want to run the script directly:
 # Open PowerShell as Administrator, then:
 Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process -Force
 cd C:\Path\To\WinTweak
-.\Win11Debloat.ps1
+.\WinTweak.ps1
 ```
 
 ## Features
@@ -60,7 +60,7 @@ Advanced options: apply tweaks to another user profile or to the default user te
 | Path | Purpose |
 |------|---------|
 | **`src/WinTweak.Launcher/`** | .NET 8 launcher; builds **WinTweak.exe** (single-file portable launcher) |
-| `Win11Debloat.ps1` | Main script and GUI entry point (used by the launcher and when running from clone) |
+| `WinTweak.ps1` | Main script and GUI entry point (used by the launcher and when running from clone) |
 | `Apps.json` | App list and metadata for removal |
 | `Schemas/` | XAML UI definitions (main window, dialogs) |
 | `Scripts/` | GUI and theme helpers, app/tweak logic |

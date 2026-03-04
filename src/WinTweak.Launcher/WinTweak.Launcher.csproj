@@ -16,7 +16,7 @@
     <Product>WinTweak</Product>
     <Company>akahobby</Company>
     <Authors>akahobby</Authors>
-    <Description>Portable launcher for the Win11Reclaim PowerShell GUI (WinTweak).</Description>
+    <Description>Portable launcher for the WinTweak PowerShell GUI.</Description>
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
 
